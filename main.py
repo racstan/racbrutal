@@ -82,7 +82,6 @@ def main():
                     if player.double_score:
                         score_increment *= 2
                     player.score += score_increment
-                    player.grow(score_increment)
 
             # Enemies collide with player
             colliding_enemies = pygame.sprite.spritecollide(
@@ -90,7 +89,6 @@ def main():
             for enemy in colliding_enemies:
                 if not player.shield:
                     player.health -= enemy.damage
-                    player.shrink()
                     if player.health <= 0:
                         game_state = GameState.GAME_OVER
                         break
