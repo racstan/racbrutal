@@ -20,4 +20,6 @@ class PowerUp(pygame.sprite.Sprite):
         pass
 
     def draw(self, surface):
-        pygame.draw.circle(surface, POWERUP_COLOR, (int(self.position.x), int(self.position.y)), self.radius)
+        pygame.draw.circle(surface, POWERUP_COLOR,
+                           (int(self.position.x), int(self.position.y)),
+                           self.radius)
