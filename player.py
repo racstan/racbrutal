@@ -52,6 +52,12 @@ class Player(pygame.sprite.Sprite):
         self.rect.center = self.position
         self.flail.update()
 
+        # Health regeneration
+        if self.health < PLAYER_MAX_HEALTH:
+            self.health += PLAYER_HEALTH_REGEN_RATE
+            if self.health > PLAYER_MAX_HEALTH:
+                self.health = PLAYER_MAX_HEALTH
+
         # Power-up duration handling
         if self.powerup_timer > 0:
             self.powerup_timer -= 1
@@ -76,6 +82,7 @@ class Player(pygame.sprite.Sprite):
         self.check_bounds()
 
     def draw(self, surface):
-        pygame.draw.circle(surface, PLAYER_COLOR,
+        color = PLAYER_COLOR if not self.shield else (0, 255, 255)
+        pygame.draw.circle(surface, color,
                            (int(self.position.x), int(self.position.y)),
                            self.radius)
