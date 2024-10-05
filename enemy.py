@@ -5,12 +5,14 @@ import random
 from settings import *
 
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self, enemy_type, groups, target):
+    def __init__(self, enemy_type, groups, target, window_width, window_height):
         super().__init__(groups)
         self.enemy_type = enemy_type
+        self.window_width = window_width
+        self.window_height = window_height
         self.position = pygame.math.Vector2(
-            random.choice([0, WINDOW_WIDTH]),
-            random.randint(0, WINDOW_HEIGHT)
+            random.choice([0, self.window_width]),
+            random.randint(0, self.window_height)
         )
         self.speed = ENEMY_BASE_SPEED * ENEMY_SPEED_MULTIPLIER[enemy_type]
         self.target = target
@@ -29,6 +31,10 @@ class Enemy(pygame.sprite.Sprite):
         if direction.length() > 0:
             direction = direction.normalize()
             self.position += direction * self.speed
+
+    def resize(self, window_width, window_height):
+        self.window_width = window_width
+        self.window_height = window_height
 
     def draw(self, surface):
         color = ENEMY_COLORS[self.enemy_type]
