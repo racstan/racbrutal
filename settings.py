@@ -10,8 +10,10 @@ PLAYER_COLOR = (0, 255, 0)
 FLAIL_COLOR = (255, 0, 0)
 CHAIN_COLOR = (200, 200, 200)
 HEALTH_COLOR = (255, 0, 0)
+HEALTH_RECHARGE_COLOR = (0, 255, 0)
 TEXT_COLOR = (255, 255, 255)
 POWERUP_COLOR = (0, 255, 255)
+ENERGY_BALL_COLOR = (255, 255, 255)
 BUTTON_COLOR = (50, 50, 200)
 BUTTON_HOVER_COLOR = (100, 100, 250)
 
@@ -27,7 +29,8 @@ FPS = 60
 
 # Game settings
 PLAYER_BASE_SPEED = 5
-PLAYER_MAX_HEALTH = 5
+PLAYER_MAX_HEALTH = 100  # Health percentage
+PLAYER_HEALTH_REGEN_RATE = 0.05  # Health regenerated per frame
 PLAYER_RADIUS = 15  # Fixed player radius
 FLAIL_BASE_LENGTH = 100  # Base length of the flail chain
 FLAIL_SPEED = 5
@@ -49,14 +52,22 @@ ENEMY_HEALTH = {
     'tough': 3,
 }
 ENEMY_DAMAGE = {
-    'basic': 1,
-    'fast': 1,
-    'tough': 2,
+    'basic': 10,
+    'fast': 15,
+    'tough': 25,
 }
 
 # Power-up settings
 POWERUP_TYPES = ['shield', 'double_score']
 POWERUP_DURATION = 5000  # milliseconds
 
+# Energy ball settings
+ENERGY_BALL_RECHARGE_AMOUNT = 20  # Health percentage restored
+ENERGY_BALL_SPAWN_INTERVAL = 8000  # milliseconds
+
 # UI settings
 FONT_NAME = None  # Use default font
+
+# Audio settings
+MUSIC_VOLUME = 0.5
+SFX_VOLUME = 0.5
