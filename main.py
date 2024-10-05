@@ -6,26 +6,13 @@ from settings import *
 from player import Player
 from enemy import Enemy
 from powerup import PowerUp
+from health_ball import HealthBall
 from ui import UI
 from game_state import GameState
 from high_score import load_high_score, save_high_score
 
 def main():
     pygame.init()
-
-    # Initialize mixer for sound
-    pygame.mixer.init()
-    pygame.mixer.music.load('assets/music/background_music.mp3')
-    pygame.mixer.music.set_volume(MUSIC_VOLUME)
-    pygame.mixer.music.play(-1)  # Loop indefinitely
-
-    # Load sound effects
-    hit_sound = pygame.mixer.Sound('assets/sounds/hit.wav')
-    collect_sound = pygame.mixer.Sound('assets/sounds/collect.wav')
-    powerup_sound = pygame.mixer.Sound('assets/sounds/powerup.wav')
-    hit_sound.set_volume(SOUND_VOLUME)
-    collect_sound.set_volume(SOUND_VOLUME)
-    powerup_sound.set_volume(SOUND_VOLUME)
 
     # Allow window to be resizable
     window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
@@ -41,8 +28,8 @@ def main():
     high_score = load_high_score(HIGH_SCORE_FILE)
 
     # Settings
-    music_on = True
-    sounds_on = True
+    music_on = True  # Placeholder, as we have no music
+    sounds_on = True  # Placeholder, as we have no sounds
 
     running = True
     while running:
@@ -108,20 +95,8 @@ def main():
                         window, window_width, window_height, music_on, sounds_on)
                     if button_rect_music.collidepoint(mouse_pos):
                         music_on = not music_on
-                        if music_on:
-                            pygame.mixer.music.play(-1)
-                        else:
-                            pygame.mixer.music.stop()
                     elif button_rect_sounds.collidepoint(mouse_pos):
                         sounds_on = not sounds_on
-                        if sounds_on:
-                            hit_sound.set_volume(SOUND_VOLUME)
-                            collect_sound.set_volume(SOUND_VOLUME)
-                            powerup_sound.set_volume(SOUND_VOLUME)
-                        else:
-                            hit_sound.set_volume(0)
-                            collect_sound.set_volume(0)
-                            powerup_sound.set_volume(0)
                     elif button_rect_back.collidepoint(mouse_pos):
                         game_state = GameState.MENU
 
@@ -182,8 +157,6 @@ def main():
                     if player.double_score:
                         score_increment *= 2
                     player.score += score_increment
-                    if sounds_on:
-                        hit_sound.play()
 
             # Enemies collide with player
             colliding_enemies = pygame.sprite.spritecollide(
@@ -199,8 +172,6 @@ def main():
                             save_high_score(HIGH_SCORE_FILE, high_score)
                         break
                 enemy.kill()
-                if sounds_on:
-                    hit_sound.play()
 
             # Player collects power-ups
             collected_powerups = pygame.sprite.spritecollide(
@@ -212,8 +183,6 @@ def main():
                 elif powerup.powerup_type == 'double_score':
                     player.double_score = True
                     player.powerup_timer = POWERUP_DURATION // (1000 // FPS)
-                if sounds_on:
-                    powerup_sound.play()
 
             # Player collects health balls
             collected_health_balls = pygame.sprite.spritecollide(
@@ -222,8 +191,6 @@ def main():
                 player.health += HEALTH_BALL_RECHARGE
                 if player.health > PLAYER_MAX_HEALTH:
                     player.health = PLAYER_MAX_HEALTH
-                if sounds_on:
-                    collect_sound.play()
 
             # Drawing
             window.fill(BACKGROUND_COLOR)
