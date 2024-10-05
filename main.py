@@ -5,7 +5,7 @@ import random
 from settings import *
 from player import Player
 from energy_particle import EnergyParticle
-from opponent import Opponent
+from enemy import Opponent
 from ui import UI
 from game_state import GameState
 
