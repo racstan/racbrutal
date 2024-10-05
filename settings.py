@@ -1,8 +1,8 @@
 # settings.py
 
-# Screen dimensions (Adjustable)
-WINDOW_WIDTH = 800  # You can change this value
-WINDOW_HEIGHT = 600  # You can change this value
+# Initial screen dimensions (can be resized)
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 600
 
 # Colors (R, G, B)
 BACKGROUND_COLOR = (30, 30, 30)
@@ -29,10 +29,11 @@ FPS = 60
 PLAYER_BASE_SPEED = 5
 PLAYER_MAX_HEALTH = 5
 PLAYER_RADIUS = 15  # Fixed player radius
-FLAIL_BASE_LENGTH = 50
-FLAIL_MAX_LENGTH = 200
-FLAIL_GROWTH_RATE = 0.5  # Length increase per score point
+FLAIL_BASE_LENGTH = 100  # Base length of the flail chain
 FLAIL_SPEED = 5
+FLAIL_BASE_RADIUS = 10
+FLAIL_MAX_RADIUS = 30
+FLAIL_GROWTH_RATE = 0.02  # Radius increase per score point
 
 # Enemy settings
 ENEMY_TYPES = ['basic', 'fast', 'tough']
