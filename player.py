@@ -9,12 +9,10 @@ class Player(pygame.sprite.Sprite):
         super().__init__(groups)
         self.position = pygame.math.Vector2(x, y)
         self.velocity = pygame.math.Vector2(0, 0)
-        self.base_speed = PLAYER_BASE_SPEED
-        self.speed = self.base_speed
+        self.speed = PLAYER_BASE_SPEED
         self.score = 0
         self.health = PLAYER_MAX_HEALTH
-        self.radius = PLAYER_MIN_RADIUS
-        self.max_radius = PLAYER_MAX_RADIUS
+        self.radius = PLAYER_RADIUS
         self.rect = pygame.Rect(0, 0, self.radius * 2, self.radius * 2)
         self.rect.center = self.position
 
@@ -47,6 +45,7 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.position += self.velocity
+        self.check_bounds()
         self.rect.center = self.position
         self.flail.update()
 
@@ -57,23 +56,18 @@ class Player(pygame.sprite.Sprite):
                 self.shield = False
                 self.double_score = False
 
-    def grow(self, amount):
-        self.radius += amount * PLAYER_GROWTH_RATE
-        if self.radius > self.max_radius:
-            self.radius = self.max_radius
-        self.update_rect()
-
-    def shrink(self):
-        self.radius -= PLAYER_SHRINK_RATE
-        if self.radius < PLAYER_MIN_RADIUS:
-            self.radius = PLAYER_MIN_RADIUS
-        self.update_rect()
-
-    def update_rect(self):
-        self.rect = pygame.Rect(0, 0, int(self.radius * 2), int(self.radius * 2))
-        self.rect.center = self.position
+    def check_bounds(self):
+        # Ensure the player stays within the window boundaries
+        if self.position.x - self.radius < 0:
+            self.position.x = self.radius
+        if self.position.x + self.radius > WINDOW_WIDTH:
+            self.position.x = WINDOW_WIDTH - self.radius
+        if self.position.y - self.radius < 0:
+            self.position.y = self.radius
+        if self.position.y + self.radius > WINDOW_HEIGHT:
+            self.position.y = WINDOW_HEIGHT - self.radius
 
     def draw(self, surface):
         pygame.draw.circle(surface, PLAYER_COLOR,
                            (int(self.position.x), int(self.position.y)),
-                           int(self.radius))
+                           self.radius)
