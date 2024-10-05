@@ -11,12 +11,16 @@ from game_state import GameState
 
 def main():
     pygame.init()
-    window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+
+    # Allow window to be resizable
+    window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
     pygame.display.set_caption("Flail Game")
     clock = pygame.time.Clock()
 
     ui = UI()
     game_state = GameState.MENU
+
+    window_width, window_height = WINDOW_WIDTH, WINDOW_HEIGHT
 
     running = True
     while running:
@@ -24,9 +28,16 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                elif event.type == pygame.VIDEORESIZE:
+                    window_width, window_height = event.w, event.h
+                    window = pygame.display.set_mode((window_width, window_height), pygame.RESIZABLE)
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_F11:
+                        # Toggle fullscreen
+                        pygame.display.toggle_fullscreen()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     mouse_pos = pygame.mouse.get_pos()
-                    button_rect = ui.draw_main_menu(window)
+                    button_rect = ui.draw_main_menu(window, window_width, window_height)
                     if button_rect.collidepoint(mouse_pos):
                         # Start the game
                         game_state = GameState.PLAYING
@@ -36,7 +47,7 @@ def main():
                         powerups = pygame.sprite.Group()
                         flails = pygame.sprite.Group()
 
-                        player = Player(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2, all_sprites)
+                        player = Player(window_width // 2, window_height // 2, all_sprites, window_width, window_height)
                         player.flail.add(all_sprites, flails)
 
                         # Events
@@ -48,7 +59,7 @@ def main():
 
             # Draw main menu
             window.fill(BACKGROUND_COLOR)
-            ui.draw_main_menu(window)
+            ui.draw_main_menu(window, window_width, window_height)
             pygame.display.flip()
             clock.tick(FPS)
 
@@ -56,15 +67,26 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-                elif event.type == enemy_spawn_event:
-                    enemy_type = random.choice(ENEMY_TYPES)
-                    Enemy(enemy_type, [all_sprites, enemies], player)
-                elif event.type == powerup_spawn_event:
-                    powerup_type = random.choice(POWERUP_TYPES)
-                    PowerUp(powerup_type, [all_sprites, powerups])
+                elif event.type == pygame.VIDEORESIZE:
+                    window_width, window_height = event.w, event.h
+                    window = pygame.display.set_mode((window_width, window_height), pygame.RESIZABLE)
+                    player.resize(window_width, window_height)
+                    for enemy in enemies:
+                        enemy.resize(window_width, window_height)
+                    for powerup in powerups:
+                        powerup.resize(window_width, window_height)
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         game_state = GameState.PAUSED
+                    elif event.key == pygame.K_F11:
+                        # Toggle fullscreen
+                        pygame.display.toggle_fullscreen()
+                elif event.type == enemy_spawn_event:
+                    enemy_type = random.choice(ENEMY_TYPES)
+                    Enemy(enemy_type, [all_sprites, enemies], player, window_width, window_height)
+                elif event.type == powerup_spawn_event:
+                    powerup_type = random.choice(POWERUP_TYPES)
+                    PowerUp(powerup_type, [all_sprites, powerups], window_width, window_height)
 
             # Update game objects
             player.handle_input()
@@ -109,7 +131,7 @@ def main():
             window.fill(BACKGROUND_COLOR)
             for sprite in all_sprites:
                 sprite.draw(window)
-            ui.draw_hud(window, player.score, player.health)
+            ui.draw_hud(window, player.score, player.health, window_width)
             pygame.display.flip()
 
             clock.tick(FPS)
@@ -118,17 +140,24 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                elif event.type == pygame.VIDEORESIZE:
+                    window_width, window_height = event.w, event.h
+                    window = pygame.display.set_mode((window_width, window_height), pygame.RESIZABLE)
+                    player.resize(window_width, window_height)
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         game_state = GameState.PLAYING
+                    elif event.key == pygame.K_F11:
+                        # Toggle fullscreen
+                        pygame.display.toggle_fullscreen()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     mouse_pos = pygame.mouse.get_pos()
-                    button_rect = ui.draw_pause_menu(window)
+                    button_rect = ui.draw_pause_menu(window, window_width, window_height)
                     if button_rect.collidepoint(mouse_pos):
                         game_state = GameState.PLAYING
 
             # Draw pause menu
-            ui.draw_pause_menu(window)
+            ui.draw_pause_menu(window, window_width, window_height)
             pygame.display.flip()
             clock.tick(FPS)
 
@@ -136,14 +165,21 @@ def main():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                elif event.type == pygame.VIDEORESIZE:
+                    window_width, window_height = event.w, event.h
+                    window = pygame.display.set_mode((window_width, window_height), pygame.RESIZABLE)
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_F11:
+                        # Toggle fullscreen
+                        pygame.display.toggle_fullscreen()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     mouse_pos = pygame.mouse.get_pos()
-                    button_rect = ui.draw_game_over(window, player.score)
+                    button_rect = ui.draw_game_over(window, player.score, window_width, window_height)
                     if button_rect.collidepoint(mouse_pos):
                         game_state = GameState.MENU
 
             # Draw game over screen
-            ui.draw_game_over(window, player.score)
+            ui.draw_game_over(window, player.score, window_width, window_height)
             pygame.display.flip()
             clock.tick(FPS)
 
