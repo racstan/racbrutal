@@ -33,12 +33,8 @@ class Flail(pygame.sprite.Sprite):
             self.radius = self.max_radius
 
         # Realistic swinging mechanics
-        if self.thrown:
-            self.angle += self.speed
-        else:
-            self.angle -= self.speed
-
         self.offset = pygame.math.Vector2(self.length, 0).rotate(-self.angle)
+        self.angle = (self.angle + self.speed) % 360
 
         flail_pos = self.position + self.offset
         self.rect.center = flail_pos
