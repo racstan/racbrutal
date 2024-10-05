@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated powerup.py">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated settings.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,7 @@
       <updated>1728063620075</updated>
       <workItem from="1728063621564" duration="1980000" />
       <workItem from="1728065683383" duration="201000" />
-      <workItem from="1728106448049" duration="2102000" />
+      <workItem from="1728106448049" duration="2641000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Upload">
       <option name="closed" value="true" />
@@ -136,7 +133,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728108540183</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated main.py">
+      <option name="closed" value="true" />
+      <created>1728108640259</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728108640259</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated settings.py">
+      <option name="closed" value="true" />
+      <created>1728108730415</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728108730416</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,10 +163,12 @@
     <MESSAGE value="updated player.py" />
     <MESSAGE value="Updated main.py and refactored opponent.py to enemy.py" />
     <MESSAGE value="Updated powerup.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated powerup.py" />
+    <MESSAGE value="Updated main.py" />
+    <MESSAGE value="Updated settings.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated settings.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728107592609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728108742944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rabrutal$player.coverage" NAME="player Coverage Results" MODIFIED="1728064425948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

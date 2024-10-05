@@ -9,10 +9,11 @@ BACKGROUND_COLOR = (30, 30, 30)
 PLAYER_COLOR = (0, 255, 0)
 FLAIL_COLOR = (255, 0, 0)
 CHAIN_COLOR = (200, 200, 200)
-PARTICLE_COLOR = (255, 255, 0)
 HEALTH_COLOR = (255, 0, 0)
 TEXT_COLOR = (255, 255, 255)
 POWERUP_COLOR = (0, 255, 255)
+BUTTON_COLOR = (50, 50, 200)
+BUTTON_HOVER_COLOR = (100, 100, 250)
 
 # Enemy colors
 ENEMY_COLORS = {
@@ -25,35 +26,37 @@ ENEMY_COLORS = {
 FPS = 60
 
 # Game settings
-PLAYER_SPEED = 5
+PLAYER_BASE_SPEED = 5
 PLAYER_MAX_HEALTH = 5
+PLAYER_MIN_RADIUS = 10
+PLAYER_MAX_RADIUS = 30
+PLAYER_GROWTH_RATE = 0.05  # Increase per score point
+PLAYER_SHRINK_RATE = 2     # Decrease per hit
 FLAIL_SPEED = 5
-FLAIL_INITIAL_LENGTH = 50
-FLAIL_GROWTH = 5
-PARTICLE_COUNT = 20
+FLAIL_LENGTH = 50
 
 # Enemy settings
 ENEMY_TYPES = ['basic', 'fast', 'tough']
-ENEMY_SPAWN_INTERVAL = 3000  # milliseconds
 ENEMY_BASE_SPEED = 2
-ENEMY_SPEED_INCREMENT = 0.2
+ENEMY_SPEED_MULTIPLIER = {
+    'basic': 1.0,
+    'fast': 1.5,
+    'tough': 2.0,
+}
 ENEMY_HEALTH = {
     'basic': 1,
     'fast': 1,
     'tough': 3,
 }
-
-# Level settings
-LEVEL_UP_TIME = 20000  # milliseconds
-MAX_LEVEL = 5
+ENEMY_DAMAGE = {
+    'basic': 1,
+    'fast': 1,
+    'tough': 2,
+}
 
 # Power-up settings
-POWERUP_TYPES = ['speed', 'invincibility', 'health']
-POWERUP_SPAWN_INTERVAL = 10000  # milliseconds
+POWERUP_TYPES = ['shield', 'double_score']
 POWERUP_DURATION = 5000  # milliseconds
-# settings.py
 
-# Button colors for the UI
-BUTTON_COLOR = (50, 50, 200)  # Color for the button in its normal state
-BUTTON_HOVER_COLOR = (100, 100, 250)  # Color for the button when hovered over
-
+# UI settings
+FONT_NAME = None  # Use default font
