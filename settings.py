@@ -68,10 +68,6 @@ FONT_NAME = None  # Use default font
 # High score file
 HIGH_SCORE_FILE = 'high_score.txt'
 
-# Sound settings
-SOUND_VOLUME = 0.5
-MUSIC_VOLUME = 0.5
-
 # Health Energy Ball settings
 HEALTH_BALL_SPAWN_INTERVAL = 10000  # milliseconds
 HEALTH_BALL_RADIUS = 10

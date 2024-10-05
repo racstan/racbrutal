@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Added settings.py">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated main.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,7 @@
       <updated>1728063620075</updated>
       <workItem from="1728063621564" duration="1980000" />
       <workItem from="1728065683383" duration="201000" />
-      <workItem from="1728106448049" duration="5687000" />
+      <workItem from="1728106448049" duration="6071000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Upload">
       <option name="closed" value="true" />
@@ -352,7 +349,39 @@
       <option name="project" value="LOCAL" />
       <updated>1728111521894</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added settings.py">
+      <option name="closed" value="true" />
+      <created>1728112246230</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1728112246231</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Updated high_score.py">
+      <option name="closed" value="true" />
+      <created>1728112293955</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1728112293956</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Updated ui.py">
+      <option name="closed" value="true" />
+      <created>1728112316477</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1728112316477</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Updated main.py">
+      <option name="closed" value="true" />
+      <created>1728112555101</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1728112555101</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,19 +397,20 @@
     <MESSAGE value="Updated settings.py --" />
     <MESSAGE value="Updated enemy.py" />
     <MESSAGE value="Updated powerup.py" />
-    <MESSAGE value="Updated main.py" />
     <MESSAGE value="Updated settings.py" />
     <MESSAGE value="Updated game_state.py" />
-    <MESSAGE value="Updated ui.py" />
     <MESSAGE value="Updated player.py" />
     <MESSAGE value="Updated flail.py" />
     <MESSAGE value="Updated energy_ball.py and refactored it." />
     <MESSAGE value="Added high_score.py" />
     <MESSAGE value="Added settings.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added settings.py" />
+    <MESSAGE value="Updated high_score.py" />
+    <MESSAGE value="Updated ui.py" />
+    <MESSAGE value="Updated main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated main.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728110438048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728112566517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rabrutal$player.coverage" NAME="player Coverage Results" MODIFIED="1728064425948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
