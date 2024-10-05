@@ -5,7 +5,7 @@ from settings import *
 from flail import Flail
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self, x, y, groups):
+    def __init__(self, x, y, groups, window_width, window_height):
         super().__init__(groups)
         self.position = pygame.math.Vector2(x, y)
         self.velocity = pygame.math.Vector2(0, 0)
@@ -22,6 +22,9 @@ class Player(pygame.sprite.Sprite):
         self.shield = False
         self.double_score = False
         self.powerup_timer = 0
+
+        self.window_width = window_width
+        self.window_height = window_height
 
     def handle_input(self):
         keys = pygame.key.get_pressed()
@@ -60,12 +63,17 @@ class Player(pygame.sprite.Sprite):
         # Ensure the player stays within the window boundaries
         if self.position.x - self.radius < 0:
             self.position.x = self.radius
-        if self.position.x + self.radius > WINDOW_WIDTH:
-            self.position.x = WINDOW_WIDTH - self.radius
+        if self.position.x + self.radius > self.window_width:
+            self.position.x = self.window_width - self.radius
         if self.position.y - self.radius < 0:
             self.position.y = self.radius
-        if self.position.y + self.radius > WINDOW_HEIGHT:
-            self.position.y = WINDOW_HEIGHT - self.radius
+        if self.position.y + self.radius > self.window_height:
+            self.position.y = self.window_height - self.radius
+
+    def resize(self, window_width, window_height):
+        self.window_width = window_width
+        self.window_height = window_height
+        self.check_bounds()
 
     def draw(self, surface):
         pygame.draw.circle(surface, PLAYER_COLOR,
