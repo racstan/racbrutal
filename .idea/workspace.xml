@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated main.py" />
+    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated settings.py">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +78,7 @@
       <updated>1728063620075</updated>
       <workItem from="1728063621564" duration="1980000" />
       <workItem from="1728065683383" duration="201000" />
-      <workItem from="1728106448049" duration="6071000" />
+      <workItem from="1728106448049" duration="6429000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Upload">
       <option name="closed" value="true" />
@@ -381,7 +384,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728112555101</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Updated settings.py">
+      <option name="closed" value="true" />
+      <created>1728112936261</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1728112936261</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +408,6 @@
     <MESSAGE value="Updated settings.py --" />
     <MESSAGE value="Updated enemy.py" />
     <MESSAGE value="Updated powerup.py" />
-    <MESSAGE value="Updated settings.py" />
     <MESSAGE value="Updated game_state.py" />
     <MESSAGE value="Updated player.py" />
     <MESSAGE value="Updated flail.py" />
@@ -407,7 +417,8 @@
     <MESSAGE value="Updated high_score.py" />
     <MESSAGE value="Updated ui.py" />
     <MESSAGE value="Updated main.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated main.py" />
+    <MESSAGE value="Updated settings.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated settings.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728112566517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
