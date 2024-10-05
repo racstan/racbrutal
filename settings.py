@@ -51,3 +51,9 @@ MAX_LEVEL = 5
 POWERUP_TYPES = ['speed', 'invincibility', 'health']
 POWERUP_SPAWN_INTERVAL = 10000  # milliseconds
 POWERUP_DURATION = 5000  # milliseconds
+# settings.py
+
+# Button colors for the UI
+BUTTON_COLOR = (50, 50, 200)  # Color for the button in its normal state
+BUTTON_HOVER_COLOR = (100, 100, 250)  # Color for the button when hovered over
+
