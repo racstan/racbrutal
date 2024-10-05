@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated settings.py">
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+    <list default="true" id="465c061b-2fd3-4193-a6b4-d7d8e54808f7" name="Changes" comment="Updated energy_ball.py and refactored it.">
+      <change beforePath="$PROJECT_DIR$/energy_particle.py" beforeDir="false" afterPath="$PROJECT_DIR$/energy_ball.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
       <updated>1728063620075</updated>
       <workItem from="1728063621564" duration="1980000" />
       <workItem from="1728065683383" duration="201000" />
-      <workItem from="1728106448049" duration="4566000" />
+      <workItem from="1728106448049" duration="4881000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Upload">
       <option name="closed" value="true" />
@@ -303,7 +303,39 @@
       <option name="project" value="LOCAL" />
       <updated>1728111055129</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Updated game_state.py">
+      <option name="closed" value="true" />
+      <created>1728111076341</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1728111076341</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Updated ui.py">
+      <option name="closed" value="true" />
+      <created>1728111097415</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1728111097415</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Updated player.py">
+      <option name="closed" value="true" />
+      <created>1728111207125</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1728111207125</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Updated flail.py">
+      <option name="closed" value="true" />
+      <created>1728111234679</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1728111234679</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,14 +349,16 @@
     <MESSAGE value="updated player.py" />
     <MESSAGE value="Updated main.py and refactored opponent.py to enemy.py" />
     <MESSAGE value="Updated settings.py --" />
-    <MESSAGE value="Updated ui.py" />
-    <MESSAGE value="Updated player.py" />
-    <MESSAGE value="Updated flail.py" />
     <MESSAGE value="Updated enemy.py" />
     <MESSAGE value="Updated powerup.py" />
     <MESSAGE value="Updated main.py" />
     <MESSAGE value="Updated settings.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated settings.py" />
+    <MESSAGE value="Updated game_state.py" />
+    <MESSAGE value="Updated ui.py" />
+    <MESSAGE value="Updated player.py" />
+    <MESSAGE value="Updated flail.py" />
+    <MESSAGE value="Updated energy_ball.py and refactored it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated energy_ball.py and refactored it." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/rabrutal$main.coverage" NAME="main Coverage Results" MODIFIED="1728110438048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
