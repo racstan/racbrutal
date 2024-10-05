@@ -1,8 +1,8 @@
 # settings.py
 
-# Screen dimensions
-WINDOW_WIDTH = 800
-WINDOW_HEIGHT = 600
+# Screen dimensions (Adjustable)
+WINDOW_WIDTH = 800  # You can change this value
+WINDOW_HEIGHT = 600  # You can change this value
 
 # Colors (R, G, B)
 BACKGROUND_COLOR = (30, 30, 30)
@@ -28,12 +28,11 @@ FPS = 60
 # Game settings
 PLAYER_BASE_SPEED = 5
 PLAYER_MAX_HEALTH = 5
-PLAYER_MIN_RADIUS = 10
-PLAYER_MAX_RADIUS = 30
-PLAYER_GROWTH_RATE = 0.05  # Increase per score point
-PLAYER_SHRINK_RATE = 2     # Decrease per hit
+PLAYER_RADIUS = 15  # Fixed player radius
+FLAIL_BASE_LENGTH = 50
+FLAIL_MAX_LENGTH = 200
+FLAIL_GROWTH_RATE = 0.5  # Length increase per score point
 FLAIL_SPEED = 5
-FLAIL_LENGTH = 50
 
 # Enemy settings
 ENEMY_TYPES = ['basic', 'fast', 'tough']
