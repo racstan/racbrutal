@@ -5,29 +5,23 @@ import random
 from settings import *
 
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self, enemy_type, groups, target, speed_increment):
+    def __init__(self, enemy_type, groups, target):
         super().__init__(groups)
         self.enemy_type = enemy_type
         self.position = pygame.math.Vector2(
             random.choice([0, WINDOW_WIDTH]),
             random.randint(0, WINDOW_HEIGHT)
         )
-        self.speed = ENEMY_BASE_SPEED + speed_increment
+        self.speed = ENEMY_BASE_SPEED * ENEMY_SPEED_MULTIPLIER[enemy_type]
         self.target = target
         self.health = ENEMY_HEALTH[enemy_type]
+        self.damage = ENEMY_DAMAGE[enemy_type]
         self.radius = 15
         self.rect = pygame.Rect(0, 0, self.radius * 2, self.radius * 2)
         self.rect.center = self.position
 
     def update(self):
-        # Different behaviors based on type
-        if self.enemy_type == 'basic':
-            self.move_towards_player()
-        elif self.enemy_type == 'fast':
-            self.move_towards_player()
-        elif self.enemy_type == 'tough':
-            self.move_randomly()
-
+        self.move_towards_player()
         self.rect.center = self.position
 
     def move_towards_player(self):
@@ -36,9 +30,8 @@ class Enemy(pygame.sprite.Sprite):
             direction = direction.normalize()
             self.position += direction * self.speed
 
-    def move_randomly(self):
-        self.position += pygame.math.Vector2(random.uniform(-1, 1), random.uniform(-1, 1)) * self.speed
-
     def draw(self, surface):
         color = ENEMY_COLORS[self.enemy_type]
-        pygame.draw.circle(surface, color, (int(self.position.x), int(self.position.y)), self.radius)
+        pygame.draw.circle(surface, color,
+                           (int(self.position.x), int(self.position.y)),
+                           self.radius)
