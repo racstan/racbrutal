@@ -29,8 +29,9 @@ FPS = 60
 
 # Game settings
 PLAYER_BASE_SPEED = 5
-PLAYER_MAX_HEALTH = 100  # Health percentage
-PLAYER_HEALTH_REGEN_RATE = 0.05  # Health regenerated per frame
+PLAYER_MAX_HEALTH = 100  # Percentage health (0-100)
+HEALTH_REGEN_RATE = 0.05  # Health regenerated per frame
+HEALTH_BALL_RECHARGE = 20  # Health restored by collecting an energy ball
 PLAYER_RADIUS = 15  # Fixed player radius
 FLAIL_BASE_LENGTH = 100  # Base length of the flail chain
 FLAIL_SPEED = 5
@@ -52,22 +53,25 @@ ENEMY_HEALTH = {
     'tough': 3,
 }
 ENEMY_DAMAGE = {
-    'basic': 10,
-    'fast': 15,
-    'tough': 25,
+    'basic': 10,  # Damage in percentage
+    'fast': 10,
+    'tough': 20,
 }
 
 # Power-up settings
 POWERUP_TYPES = ['shield', 'double_score']
 POWERUP_DURATION = 5000  # milliseconds
 
-# Energy ball settings
-ENERGY_BALL_RECHARGE_AMOUNT = 20  # Health percentage restored
-ENERGY_BALL_SPAWN_INTERVAL = 8000  # milliseconds
-
 # UI settings
 FONT_NAME = None  # Use default font
 
-# Audio settings
+# High score file
+HIGH_SCORE_FILE = 'high_score.txt'
+
+# Sound settings
+SOUND_VOLUME = 0.5
 MUSIC_VOLUME = 0.5
-SFX_VOLUME = 0.5
+
+# Health Energy Ball settings
+HEALTH_BALL_SPAWN_INTERVAL = 10000  # milliseconds
+HEALTH_BALL_RADIUS = 10
