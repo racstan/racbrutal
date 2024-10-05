@@ -5,12 +5,12 @@ import random
 from settings import *
 
 class PowerUp(pygame.sprite.Sprite):
-    def __init__(self, groups):
+    def __init__(self, powerup_type, groups):
         super().__init__(groups)
-        self.type = random.choice(['speed', 'health'])
+        self.powerup_type = powerup_type
         self.position = pygame.math.Vector2(
-            random.randint(0, WINDOW_WIDTH),
-            random.randint(0, WINDOW_HEIGHT)
+            random.randint(50, WINDOW_WIDTH - 50),
+            random.randint(50, WINDOW_HEIGHT - 50)
         )
         self.radius = 10
         self.rect = pygame.Rect(0, 0, self.radius * 2, self.radius * 2)
